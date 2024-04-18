@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homework</title>
+    <style>
+        body {
+            background-color: #EEEEEE;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            max-width: 100%;
+        }
+        .item {
+            background-color: #FEFEFE;
+            display: flex;
+            flex-direction: column;
+            width: 25vw;
+            margin-top: 3%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+        .item img {
+            width: 100%;
+            object-fit: cover;
+        }
+        button {
+            margin-left: 15pt;
+            margin-right: 15pt;
+            margin-bottom: 1pc;
+            color: #6678B3;
+            background-color: #DCE1F4;
+            text-align: center;
+            border: 0;
+            font-size: 24px;
+        }
+        @media (max-width: 450px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .item {
+                width: 100%;
+            }
+        }
+        p, h1, button {
+            padding-left: 15pt;
+            padding-right: 15pt;
+            font-family: Cambria;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">
+            <img src="https://habrastorage.org/r/w1560/getpro/habr/post_images/2a5/e4d/143/2a5e4d14311550e561227b93fd8fcd3e.jpg" alt="Изображение 1">
+            <h1>Sunspot looking into space</h1>
+            <p>Image of the <strong>Sun's chromosphere</strong> with a visible spot. This is the outer part of our star's atmosphere. This image was made from several frames and processed in Photoshop.</p>
+            <p>SkyWatcher Esprit 150 f/7 telescope, DayStar Quark Gemini lens, SkyWatcher EQ8Rh-Pro mount, ZWO ASI174MM camera, 2,000 x 16 ms.</p>
+            <button class="">Explore&#8594</button>
+        </div>
+        <div class="item">
+            <img src="https://habrastorage.org/r/w1560/getpro/habr/post_images/2b1/380/759/2b1380759c627b4d0cf683d29e9b9640.jpg" alt="Изображение 2">
+            <h1>Dugi Otok</h1>
+            <p>This image, taken from an <strong>island in Croatia</strong>, shows star trails that indicate the Earth's rotation. The reflections of the stars in the water were added later because the wind prevented the photographer from capturing their actual reflection.
+            <p>Nikon D600 camera, 20 mm f/2.8 lens, ISO 1600. The foreground required a shutter speed of 526 s, the sky - 247 x 25</p>
+            <button class="">Explore&#8594</button>
+        </div>
+        <div class="item">
+            <img src="https://habrastorage.org/r/w1560/getpro/habr/post_images/39c/649/20e/39c64920e30a6095191b4a7cbd73827d.jpg" alt="Изображение 3">
+            <h1>NGC 2024 – The Flame Nebula</h1>
+            <p>The Flame Nebula in the constellation Orion is located at a distance of 900 to 1500 light years from us. This is a composite image from <strong>Australia</strong> in November and December 2020.</p>
+            <p>Planewave CDK 12.5" telescope with f/8, Astrodon and Baader filters, AP900GTO mount, SBIG STXL-1100 + AOX camera, L-RGB-Ha composite, 23 hours exposure.</p>
+            <button class="">Explore&#8594</button>
+        </div>
+    </div>
+</body>
+</html>
