@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Basics</title>
+    <script>
+        const name = "Бато";
+        const occupation = "программист";
+        const yearOfBirth = new Date(2001, 3, 20);
+        const currentYear = new Date();
+        let age = currentYear.getFullYear() - yearOfBirth.getFullYear();
+        if (currentYear.getMonth() < 3) {
+            --age;
+        } else if (currentYear.getMonth() == 3 && currentYear.getDay() < 20) {
+            --age;
+        }
+        let story = `Меня зовут ${name}. Я начинающий ${occupation}, и мне сейчас лет ${age}.`;
+        console.log(story);
+    </script>
+</head>
+<body>
+</body>
+</html>

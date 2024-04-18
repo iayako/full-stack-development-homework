@@ -1,0 +1,101 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<style>
+    .inline {
+        display: inline-block;
+        color: white;
+    }
+    .red {
+    background-color: red;
+    }
+    .green {
+        background-color: green;
+    }
+    .blue {
+        background-color: blue;
+    }
+    .none {
+        display: none;
+    }
+    .flex-container {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .item {
+        background-color: slateblue;
+        color: aliceblue;
+        flex: 150px
+    }
+
+    .zblock1 {
+        position: absolute;
+        z-index: 3;
+        background-color: aquamarine;
+    }
+
+    .zblock2 {
+        position: absolute;
+        z-index: 2;
+        background-color: slateblue;
+    }
+
+    .zblock3 {
+        position: absolute;
+        z-index: 1;
+        background-color: aliceblue;
+    }
+
+</style>
+
+<div>
+    <h2>1. Inline position</h2>
+    <div class="inline red">
+        Что-то на красном
+    </div>
+    <div class="inline green">
+        Что-то на зелёном
+    </div>
+    <div class="inline blue">
+        Что-то на синем
+    </div>
+
+    <h2>2. None position</h2>
+    <div class style="font-weight: bold">
+        Ответ на интересующий вас вопрос скрыт в невидимом блоке
+    </div>
+    <div class="none">
+        42
+    </div>
+
+    <h2>3. Flex position</h2>
+    <div class="flex-container">
+        <div class="item"> первый</div>
+        <div class="item"> второй</div>
+        <div class="item"> третий</div>
+        <div class="item"> четвертый</div>
+        <div class="item"> пятый</div>
+        <div class="item"> шестой</div>
+        <div class="item"> седьмой</div>
+        <div class="item"> войсьмой</div>
+        <div class="item"> девятый</div>
+        <div class="item"> десятый</div>
+    </div>
+
+    <div class="zblock1">
+        короткий текст
+    </div>
+
+    <div class="zblock2">
+        текст, который больше короткого
+    </div>
+
+    <div class="zblock3">
+        самый длинный текст, но его все перекрывают
+    </div>
+</div>
+
+</html>
