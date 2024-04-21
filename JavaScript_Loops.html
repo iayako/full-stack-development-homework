@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        let i = 0;
+        while (i <= 10) {
+            alert(i);
+            i += 2;
+        }
+
+        let j = 0;
+        while(true) {
+            ++j;
+            alert(j)
+            if (j === 5) break;
+        }
+
+        let buuza = {
+            name: "buuza",
+            "selling price": 250,
+            ingredients: {
+                "wheat flour": "500 gm",
+                "ground beef": "500 gm",
+                onion: "1 head",
+                water: "300 ml",
+                egg: "1 piece",
+                salt: "2 tps",
+                "ground black pepper": "pinch",
+                pork: "200 gm"
+            }
+        }
+        let wok = {
+            name: "wok",
+            "selling price": 220,
+            ingredients: {
+                noodles: "75 gm",
+                "chiken fillet": "125 gm",
+                carrot: "0.5 PC",
+                onion: "0.5 PC",
+                "bell peper": "0.3 PC",
+                garlic: "0.5 tooth",
+                "green onions": "2.5 gm",
+                "soy sause": "2.5 tbsp",
+                "ginger powder": "0.3 tsp",
+                water: "50 ml",
+                "vegetable oil": "1.5 tbsp",
+                salt: "taste"
+            }
+        }
+        let pizza = {
+            name: "pizza",
+            "selling price": 280,
+            ingredients: {
+                flour: "500 gm",
+                "fresh yeast": "30 gm",
+                sugar: "taste",
+                salt: "1 pinch",
+                "olive oil": "4 gm",
+                "tomato sause": "taste",
+                "fresh basil": "taste",
+                "tomato paste": "2 tbsp",
+                oregano: "1 tsp",
+                "hard cheese": "300 gm",
+                "chees fets": "taste"
+            }
+        }
+        let ingredientPrices = {
+            "wheat flour": 30,
+            "ground beef": 50,
+            onion: 10,
+            egg: 15,
+            salt: 5,
+            "ground black pepper": 5,
+            pork: 55,
+            noodles: 15,
+            "chiken fillet": 35,
+            carrot: 20,
+            "bell peper": 5,
+            garlic: 10,
+            "green onions": 15,
+            "soy sause": 10,
+            "ginger powder": 10,
+            water: 5,
+            "vegetable oil": 15,
+            flour: 25,
+            "fresh yeast": 15,
+            sugar: 15,
+            "olive oil": 20,
+            "tomato sause": 15,
+            "fresh basil": 5,
+            "tomato paste": 10,
+            oregano: 5,
+            "hard cheese": 35,
+            "chees fets": 30
+        }
+        let menu = [buuza, wok, pizza];
+        for (let dish in menu) {
+            let ingredientsCost = 0;
+            for (let ingredient in menu[dish].ingredients)
+                ingredientsCost += ingredientPrices[ingredient];
+            menu[dish]["cost of products"] = ingredientsCost;
+            menu[dish].profit = menu[dish]["selling price"] - ingredientsCost;
+        }
+        for (let dish in menu) {
+            alert(menu[dish].name + " profit: " + menu[dish].profit);
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
