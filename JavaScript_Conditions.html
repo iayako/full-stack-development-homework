@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        alert("Вопросы на логику.\nВсего 10 вопросов с нарастающей сложностью c:")
+        let score = 0;
+        let answer = prompt("Набита пухом, лежит под ухом. Что это?");
+        if (answer.toLowerCase() === "подушка") ++score;
+        answer = prompt("Всегда во рту. А не проглотишь.")
+        if (answer.toLowerCase() === "язык") ++score;
+        answer = prompt("Что это такое - большое, как слон, но совсем ничего не весит?")
+        if (answer.toLowerCase() === "тень" || answer.toLowerCase() === "тень слона") ++score;
+        answer = prompt("Что поднять с земли легко. Но сложно кинуть далеко?")
+        if (answer.toLowerCase() === "перо") ++score;
+        answer = prompt("Простой вопрос для малышей: \"Кого боится кот?\"")
+        if (answer.toLowerCase() === "собак" || answer.toLowerCase() === "собаку") ++score;
+        answer = prompt("Пять комнат, одни ворота.")
+        if (answer.toLowerCase() === "перчатка") ++score;
+        answer = prompt("Пушистая, а не зверь. Греет, а не печка.")
+        if (answer.toLowerCase() === "шуба") ++score;
+        answer = prompt("Всю жизнь ходят в обгонку, а обогнать друг друга не могут.")
+        if (answer.toLowerCase() === "ноги") ++score;
+        answer = prompt("x^3 - 6x^2 + 11x - 6 = 0. Чему равен x?")
+        if (answer === "1") score += 10;
+        answer = prompt("Допустим, у вас есть блок массой m = 5 кг, который покоится на наклонной плоскости " +
+            "под углом α = 30∘ к горизонту. Коэффициент трения между блоком и плоскостью равен μ = 0.3. " +
+            "Какая сила F должна быть приложена к блоку параллельно плоскости, чтобы удержать его в состоянии покоя?")
+        if (answer.toLowerCase() === "24.5") score += 10;
+        alert(score <= 8 ? (score < 5 ? "Повезёт в следующий раз" : "Хорошо!") : score <= 10 ? "Отлично!" : "Гениально!");
+    </script>
+</head>
+<body>
+</body>
+</html>
