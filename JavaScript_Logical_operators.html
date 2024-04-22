@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>
+        let users = {
+            admin: "root",
+            user: "123",
+            guest: "",
+        }
+        let login = prompt("Enter username", "guest");
+        if (login !== "guest" && !(login in users)) {
+            alert("This user does not exist")
+        } else if (login !== "guest" && users[login] !== prompt("Enter password")) {
+            alert("Wrong password")
+        } else {
+            alert(`You are logged in as ${login}`)
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
