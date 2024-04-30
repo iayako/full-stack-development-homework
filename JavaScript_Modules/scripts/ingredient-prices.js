@@ -1,0 +1,31 @@
+let ingredientPrices = {
+    "wheat flour": 30,
+    "ground beef": 50,
+    onion: 10,
+    egg: 15,
+    salt: 5,
+    "ground black pepper": 5,
+    pork: 55,
+    noodles: 15,
+    "chiken fillet": 35,
+    carrot: 20,
+    "bell peper": 5,
+    garlic: 10,
+    "green onions": 15,
+    "soy sause": 10,
+    "ginger powder": 10,
+    water: 5,
+    "vegetable oil": 15,
+    flour: 25,
+    "fresh yeast": 15,
+    sugar: 15,
+    "olive oil": 20,
+    "tomato sause": 15,
+    "fresh basil": 5,
+    "tomato paste": 10,
+    oregano: 5,
+    "hard cheese": 35,
+    "chees fets": 30
+}
+
+export default ingredientPrices;
