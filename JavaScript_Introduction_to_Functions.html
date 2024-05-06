@@ -7,79 +7,62 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script>
         function min(a, b) {return a < b ? a : b;}
-        function calcProfit(dish) {
+        function calcProfit(ingredients, selling_price, ingredientsPrices) {
             let ingredientsCost = 0;
-            for (let ingredient in dish.ingredients)
-                ingredientsCost += ingredientPrices[ingredient];
-            dish["cost of products"] = ingredientsCost;
-            dish.profit = dish["selling price"] - ingredientsCost;
+            for (let ingredientInfo in ingredients) {
+                let ingredient = ingredients[ingredientInfo];
+                ingredientsCost += ingredientsPrices[ingredient.name] * ingredient.amount;
+            }
+            return selling_price - ingredientsCost;
         }
         let buuza = {
             name: "buuza",
             "selling price": 250,
-            "energy value": {
-                calories: "568 kcal",
-                proteins: "30 gm",
-                fats: "21 gm",
-                carbohydrates: "65 gm"
-            },
-            ingredients: {
-                "wheat flour": "500 gm",
-                "ground beef": "500 gm",
-                onion: "1 head",
-                water: "300 ml",
-                egg: "1 piece",
-                salt: "2 tps",
-                "ground black pepper": "pinch",
-                pork: "200 gm"
-            }
+            ingredients: [
+                {name: "wheat flour", amount: 0.5, meusure_unit: "kg"},
+                {name: "ground beef", amount: 0.5, meusure_unit: "kg"},
+                {name: "onion", amount: 1, meusure_unit: "peace"},
+                {name: "water", amount: 0.3, meusure_unit: "l"},
+                {name: "egg", amount: 1, meusure_unit: "peace"},
+                {name: "salt", amount: 2, meusure_unit: "ts"},
+                {name: "ground black pepper", amount: 1, meusure_unit: "pinch"},
+                {name: "pork", amount: 0.2, meusure_unit: "kg"},
+            ]
         }
         let wok = {
             name: "wok",
-            "selling price": 220,
-            "energy value": {
-                calories: "127 kcal",
-                proteins: "8 gm",
-                fats: "8 gm",
-                carbohydrates: "13 gm"
-            },
-            ingredients: {
-                noodles: "75 gm",
-                "chiken fillet": "125 gm",
-                carrot: "0.5 PC",
-                onion: "0.5 PC",
-                "bell peper": "0.3 PC",
-                garlic: "0.5 tooth",
-                "green onions": "2.5 gm",
-                "soy sause": "2.5 tbsp",
-                "ginger powder": "0.3 tsp",
-                water: "50 ml",
-                "vegetable oil": "1.5 tbsp",
-                salt: "taste"
-            }
+            "selling price": 500,
+            ingredients: [
+                {name: "noodles", amount: 0.075, meusure_unit: "kg"},
+                {name: "chiken fillet", amount: 0.125, meusure_unit: "kg"},
+                {name: "carrot", amount: 0.5, meusure_unit: "peace"},
+                {name: "onion", amount: 0.5, meusure_unit: "peace"},
+                {name: "bell peper", amount: 0.3, meusure_unit: "peace"},
+                {name: "garlic", amount: 0.5, meusure_unit: "tooth"},
+                {name: "green onions", amount: 0.0025, meusure_unit: "kg"},
+                {name: "soy sause", amount: 2.5, meusure_unit: "tbsp"},
+                {name: "ginger powder", amount: 0.3, meusure_unit: "ts"},
+                {name: "water", amount: 50, meusure_unit: "ml"},
+                {name: "vegetable oil", amount: 1.5, meusure_unit: "tbs"},
+                {name: "salt", amount: 0, meusure_unit: "taste"},
+            ]
         }
         let pizza = {
             name: "pizza",
             "selling price": 280,
-            "energy value": {
-                calories: "715 kcal",
-                proteins: "35 gm",
-                fats: "23 gm",
-                carbohydrates: "93 gm"
-            },
-            ingredients: {
-                flour: "500 gm",
-                "fresh yeast": "30 gm",
-                sugar: "taste",
-                salt: "1 pinch",
-                "olive oil": "4 gm",
-                "tomato sause": "taste",
-                "fresh basil": "taste",
-                "tomato paste": "2 tbsp",
-                oregano: "1 tsp",
-                "hard cheese": "300 gm",
-                "chees fets": "taste"
-            }
+            ingredients: [
+                {name: "flour", amount: 0.5, meusure_unit: "kg"},
+                {name: "fresh yeast", amount: 0.03, meusure_unit: "kg"},
+                {name: "sugar", amount: 0, meusure_unit: "taste"},
+                {name: "salt", amount: 1, meusure_unit: "ts"},
+                {name: "olive oil", amount: 0.004, meusure_unit: "kg"},
+                {name: "tomato sause", amount: 0, meusure_unit: "taste"},
+                {name: "fresh basil", amount: 0, meusure_unit: "taste"},
+                {name: "tomato paste", amount: 2, meusure_unit: "tbs"},
+                {name: "oregano", amount: 1, meusure_unit: "ts"},
+                {name: "hard cheese", amount: 0.3, meusure_unit: "kg"},
+                {name: "chees fets", amount: 0, meusure_unit: "taste"},
+            ]
         }
         let ingredientPrices = {
             "wheat flour": 30,
@@ -110,8 +93,9 @@
             "hard cheese": 35,
             "chees fets": 30
         }
-        calcProfit(buuza);
-        alert(buuza.profit);
+        buuza.profit = calcProfit(buuza.ingredients, buuza["selling price"], ingredientPrices);
+        wok.profit = calcProfit(wok.ingredients, wok["selling price"], ingredientPrices);
+        pizza.profit = calcProfit(pizza.ingredients, pizza["selling price"], ingredientPrices);
     </script>
 </head>
 <body>

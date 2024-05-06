@@ -1,9 +1,10 @@
 import ingredientPrices from "./ingredient-prices.js"
 
-export default function calcProfit(dish) {
+export default function calcProfit(ingredients, selling_price, ingredientsPrices) {
     let ingredientsCost = 0;
-    for (let ingredient in dish.ingredients)
-        ingredientsCost += ingredientPrices[ingredient];
-    dish["cost of products"] = ingredientsCost;
-    dish.profit = dish["selling price"] - ingredientsCost;
+    for (let ingredientInfo in ingredients) {
+        let ingredient = ingredients[ingredientInfo];
+        ingredientsCost += ingredientsPrices[ingredient.name] * ingredient.amount;
+    }
+    return selling_price - ingredientsCost;
 }
