@@ -1,0 +1,193 @@
+function calcProfitFactory(ingredientsPrices) {
+    return function (ingredients, selling_price) {
+        // let ingredientsCost = 0;
+        // for (let ingredientObj in ingredients) {
+        //     let ingredient = ingredients[ingredientObj];
+        //     ingredientsCost += ingredientsPrices[ingredient.name] * ingredient.amount;
+        // }
+        let ingredientsCost = ingredients.reduce((sum, item) => sum + ingredientsPrices[item.name] * item.amount, 0)
+        return selling_price - ingredientsCost;
+    }
+}
+let buuza = {
+    name: "buuza",
+    "selling price": 250,
+    ingredients: [
+        {name: "wheat flour", amount: 0.5, meusure_unit: "kg"},
+        {name: "ground beef", amount: 0.5, meusure_unit: "kg"},
+        {name: "onion", amount: 1, meusure_unit: "peace"},
+        {name: "water", amount: 0.3, meusure_unit: "l"},
+        {name: "egg", amount: 1, meusure_unit: "peace"},
+        {name: "salt", amount: 2, meusure_unit: "ts"},
+        {name: "ground black pepper", amount: 1, meusure_unit: "pinch"},
+        {name: "pork", amount: 0.2, meusure_unit: "kg"},
+    ]
+}
+let wok = {
+    name: "wok",
+    "selling price": 500,
+    ingredients: [
+        {name: "noodles", amount: 0.075, meusure_unit: "kg"},
+        {name: "chicken fillet", amount: 0.125, meusure_unit: "kg"},
+        {name: "carrot", amount: 0.5, meusure_unit: "peace"},
+        {name: "onion", amount: 0.5, meusure_unit: "peace"},
+        {name: "bell peper", amount: 0.3, meusure_unit: "peace"},
+        {name: "garlic", amount: 0.5, meusure_unit: "tooth"},
+        {name: "green onions", amount: 0.0025, meusure_unit: "kg"},
+        {name: "soy sause", amount: 2.5, meusure_unit: "tbsp"},
+        {name: "ginger powder", amount: 0.3, meusure_unit: "ts"},
+        {name: "water", amount: 0.05, meusure_unit: "l"},
+        {name: "vegetable oil", amount: 1.5, meusure_unit: "tbs"},
+        {name: "salt", amount: 0, meusure_unit: "taste"},
+    ]
+}
+let pizza = {
+    name: "pizza",
+    "selling price": 280,
+    ingredients: [
+        {name: "flour", amount: 0.5, meusure_unit: "kg"},
+        {name: "fresh yeast", amount: 0.03, meusure_unit: "kg"},
+        {name: "sugar", amount: 0, meusure_unit: "taste"},
+        {name: "salt", amount: 1, meusure_unit: "ts"},
+        {name: "olive oil", amount: 0.004, meusure_unit: "kg"},
+        {name: "tomato sause", amount: 0, meusure_unit: "taste"},
+        {name: "fresh basil", amount: 0, meusure_unit: "taste"},
+        {name: "tomato paste", amount: 2, meusure_unit: "tbs"},
+        {name: "oregano", amount: 1, meusure_unit: "ts"},
+        {name: "hard cheese", amount: 0.3, meusure_unit: "kg"},
+        {name: "chees fets", amount: 0, meusure_unit: "taste"},
+    ]
+}
+let ingredientsPrices = [
+    {
+        city: "Ulan-Ude", prices: {
+            "wheat flour": 30,
+            "ground beef": 50,
+            onion: 10,
+            egg: 15,
+            salt: 5,
+            "ground black pepper": 5,
+            pork: 55,
+            noodles: 20,
+            "chiken fillet": 35,
+            carrot: 20,
+            "bell peper": 5,
+            garlic: 10,
+            "green onions": 15,
+            "soy sause": 10,
+            "ginger powder": 10,
+            water: 5,
+            "vegetable oil": 15,
+            flour: 25,
+            "fresh yeast": 15,
+            sugar: 15,
+            "olive oil": 20,
+            "tomato sause": 15,
+            "fresh basil": 5,
+            "tomato paste": 10,
+            oregano: 5,
+            "hard cheese": 35,
+            "chees fets": 30
+        }
+    },
+    {
+        city: "Moscow", prices: {
+            "wheat flour": 35,
+            "ground beef": 55,
+            onion: 15,
+            egg: 20,
+            salt: 10,
+            "ground black pepper": 10,
+            pork: 60,
+            noodles: 25,
+            "chiken fillet": 40,
+            carrot: 25,
+            "bell peper": 10,
+            garlic: 15,
+            "green onions": 20,
+            "soy sause": 15,
+            "ginger powder": 15,
+            water: 10,
+            "vegetable oil": 20,
+            flour: 30,
+            "fresh yeast": 20,
+            sugar: 20,
+            "olive oil": 25,
+            "tomato sause": 20,
+            "fresh basil": 10,
+            "tomato paste": 15,
+            oregano: 10,
+            "hard cheese": 40,
+            "chees fets": 35
+        }
+    }
+]
+// добавляем в menu массив объектов citiesProfits (профит в каждом городе)
+let menu = [buuza, wok, pizza];
+let citiesProfits = [
+    {city: "Moscow", profit: null},
+    {city: "Ulan-Ude", profit: null}
+];
+for (const dish in menu)
+    menu[dish].profits = citiesProfits.map(cityProfit => ({ ...cityProfit}));
+// ---------------------------------------------------------
+// создаём массив объектов calcProfitFuncObj с функциями расчёта профита для каждого города
+let calcProfitFuncObj = [
+    {city: "Moscow", func: null},
+    {city: "Ulan-Ude", func: null}
+];
+for (const cityObj in ingredientsPrices) {
+    let calcProfit = calcProfitFactory(ingredientsPrices[cityObj].prices);
+    for (const obj in calcProfitFuncObj) {
+        if (calcProfitFuncObj[obj].city === ingredientsPrices[cityObj].city)
+            calcProfitFuncObj[obj].func = calcProfit;
+    }
+}
+// -----------------------------------------------------------
+// заполняем объект profits в зависимости от города принимаем определённую функцию
+for (let dish in menu) {
+    for (let cityProfit in menu[dish].profits) {
+        for (let cityFunc in calcProfitFuncObj) {
+            if (menu[dish].profits[cityProfit].city === calcProfitFuncObj[cityFunc].city) {
+                menu[dish].profits[cityProfit].profit = calcProfitFuncObj[cityFunc].func(menu[dish].ingredients, menu[dish]["selling price"]);
+            }
+        }
+    }
+}
+// -----------------------------------------------------------
+// Используйте `map` , чтобы получить массив с объектами в которых содержится только название и стоимость каждого блюда.
+let shortMenu = menu.map(dish => ({name: dish.name, "selling price": dish["selling price"]}))
+console.log(shortMenu);
+// -----------------------------------------------------------
+// Определите, есть ли в меню хоть одно вегетарианское блюдо, используя `some`.
+let meat = ["chicken fillet", "pork", "ground beef"];
+let isAnyVegetarian = menu.some(dish =>
+    !dish.ingredients.some(ingredient =>
+        meat.includes(ingredient.name)
+    )
+);
+if (isAnyVegetarian) {
+    console.log("Есть вегетарианское блюдо");
+} else {
+    console.log("Нет вегетарианских блюд");
+}
+// -----------------------------------------------------------
+// Определите, полностью ли у вас вегетарианское меню с помощью `every`.
+let allVegetarian = menu.every(dish =>
+    !dish.ingredients.some(ingredient =>
+        meat.includes(ingredient.name)
+    )
+);
+if (allVegetarian) {
+    console.log("Все блюда вегетарианские");
+} else {
+    console.log("Не все блюда вегетарианские");
+}
+// -----------------------------------------------------------
+// Создайте массив с вегетарианскими блюдами с помощью filter.
+let menuVegetarian = menu.filter(dish =>
+    !dish.ingredients.some(ingredient =>
+        meat.includes(ingredient.name)
+    )
+)
+console.log(menuVegetarian);
