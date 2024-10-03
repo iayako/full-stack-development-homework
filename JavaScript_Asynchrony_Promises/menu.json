@@ -1,0 +1,175 @@
+[
+  {
+    "name": "buuza",
+    "selling_price": 250,
+    "ingredients": [
+      {
+        "name": "wheat flour",
+        "amount": 0.5,
+        "measure_unit": "kg"
+      },
+      {
+        "name": "ground beef",
+        "amount": 0.5,
+        "measure_unit": "kg"
+      },
+      {
+        "name": "onion",
+        "amount": 1,
+        "measure_unit": "piece"
+      },
+      {
+        "name": "water",
+        "amount": 0.3,
+        "measure_unit": "l"
+      },
+      {
+        "name": "egg",
+        "amount": 1,
+        "measure_unit": "piece"
+      },
+      {
+        "name": "salt",
+        "amount": 2,
+        "measure_unit": "ts"
+      },
+      {
+        "name": "ground black pepper",
+        "amount": 1,
+        "measure_unit": "pinch"
+      },
+      {
+        "name": "pork",
+        "amount": 0.2,
+        "measure_unit": "kg"
+      }
+    ]
+  },
+  {
+    "name": "wok",
+    "selling_price": 500,
+    "ingredients": [
+      {
+        "name": "noodles",
+        "amount": 0.075,
+        "measure_unit": "kg"
+      },
+      {
+        "name": "chicken fillet",
+        "amount": 0.125,
+        "measure_unit": "kg"
+      },
+      {
+        "name": "carrot",
+        "amount": 0.5,
+        "measure_unit": "piece"
+      },
+      {
+        "name": "onion",
+        "amount": 0.5,
+        "measure_unit": "piece"
+      },
+      {
+        "name": "bell pepper",
+        "amount": 0.3,
+        "measure_unit": "piece"
+      },
+      {
+        "name": "garlic",
+        "amount": 0.5,
+        "measure_unit": "clove"
+      },
+      {
+        "name": "green onions",
+        "amount": 0.0025,
+        "measure_unit": "kg"
+      },
+      {
+        "name": "soy sauce",
+        "amount": 2.5,
+        "measure_unit": "tbsp"
+      },
+      {
+        "name": "ginger powder",
+        "amount": 0.3,
+        "measure_unit": "ts"
+      },
+      {
+        "name": "water",
+        "amount": 0.05,
+        "measure_unit": "l"
+      },
+      {
+        "name": "vegetable oil",
+        "amount": 1.5,
+        "measure_unit": "tbsp"
+      },
+      {
+        "name": "salt",
+        "amount": 0,
+        "measure_unit": ""
+      }
+    ]
+  },
+  {
+    "name": "pizza",
+    "selling_price": 280,
+    "ingredients": [
+      {
+        "name": "flour",
+        "amount": 0.5,
+        "measure_unit": "kg"
+      },
+      {
+        "name": "fresh yeast",
+        "amount": 0.03,
+        "measure_unit": "kg"
+      },
+      {
+        "name": "sugar",
+        "amount": 0,
+        "measure_unit": ""
+      },
+      {
+        "name": "salt",
+        "amount": 1,
+        "measure_unit": "ts"
+      },
+      {
+        "name": "olive oil",
+        "amount": 0.004,
+        "measure_unit": "kg"
+      },
+      {
+        "name": "tomato sauce",
+        "amount": 0,
+        "measure_unit": ""
+      },
+      {
+        "name": "fresh basil",
+        "amount": 0,
+        "measure_unit": ""
+      },
+      {
+        "name": "tomato paste",
+        "amount": 2,
+        "measure_unit": "tbsp"
+      },
+      {
+        "name": "oregano",
+        "amount": 1,
+        "measure_unit": "ts"
+      },
+      {
+        "name": "hard cheese",
+        "amount": 0.3,
+        "measure_unit": "kg"
+      },
+      {
+        "name": "cheese feta",
+        "amount": 0,
+        "measure_unit": ""
+      }
+    ]
+  }
+]
